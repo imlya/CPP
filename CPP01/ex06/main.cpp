@@ -5,30 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 15:37:45 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/27 00:37:38 by imatek           ###   ########.fr       */
+/*   Created: 2025/05/23 11:50:43 by imatek            #+#    #+#             */
+/*   Updated: 2025/05/26 22:35:24 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Harl.hpp"
 
-int main()
+int main(int ac, char **av)
 {
-	PhoneBook book;
-	std::string commande;
+	Harl message;
+	std::string level = av[1];
 
-	std::cout << "Please enter ADD, SEARCH or EXIT" << std::endl;
-	while (getline(std::cin, commande))
+	if (ac == 2)
 	{
-		if (commande == "EXIT")
-			break;
-		else if (commande == "ADD")
-			book.add();
-		else if (commande == "SEARCH")
-			book.search();
-		else
-			std::cout << "error : Please enter ADD, SEARCH or EXIT" << std::endl;
+		if (level == "DEBUG" || level == "INFO" || level == "WARNING" || level == "ERROR")
+			message.complain(level);
+		else 
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 	return (0);
 }
-

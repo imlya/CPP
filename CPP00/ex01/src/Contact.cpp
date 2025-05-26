@@ -3,31 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Moon <Moon@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 15:37:42 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/06 10:02:44 by Moon             ###   ########.fr       */
+/*   Updated: 2025/05/27 01:03:05 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-//constructeur
+// constructeur
 Contact::Contact(void)
 {
-	return ;
+	return;
 }
 
-//destructeur
+// destructeur
 Contact::~Contact(void)
 {
-	return ;
+	return;
 }
 
-int Contact::phone_is_digit()
+int Contact::phone_is_digit(std::string number)
 {
-	for (size_t i = 0; i < _phone_number.length(); i++)
-		if(!isdigit(_phone_number[i]))
+	for (size_t i = 0; i < number.length(); i++)
+		if (!isdigit(number[i]))
 			return (0);
 	return (1);
 }
@@ -35,7 +35,7 @@ int Contact::phone_is_digit()
 int Contact::printable_infos(std::string &string)
 {
 	for (size_t i = 0; i < string.length(); i++)
-		if(!isprint(string[i]))
+		if (!isprint(string[i]))
 			return (0);
 	return (1);
 }

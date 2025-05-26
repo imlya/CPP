@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 15:37:39 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/07 10:48:46 by imatek           ###   ########.fr       */
+/*   Created: 2025/05/23 11:50:51 by imatek            #+#    #+#             */
+/*   Updated: 2025/05/26 13:33:49 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef HARL_HPP
+#define HARL_HPP
 
-#include "Contact.hpp"
+#include <iostream>
+#include <cstring>
 
-class PhoneBook{
+class Harl{
+	private:
+		void _debug (void);
+		void _info (void);
+		void _warning(void);
+		void _error (void);
 
-private:
-
-	Contact contacts[8];
-	int _index;
-
-public:
-
-	PhoneBook(void);
-	~PhoneBook(void);
-
-	void	add(void);
-	void	search(void);
-	void	print_list(void);
+	public:
+		Harl(void);
+		~Harl(void);
+		void complain (std::string level);
 };
 
 #endif

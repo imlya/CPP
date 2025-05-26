@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 17:55:21 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/15 15:16:32 by imatek           ###   ########.fr       */
+/*   Updated: 2025/05/26 23:51:49 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,40 @@ int main(int ac, char **av)
 		std::string filename = av[1];
 		std::string s1 = av[2];
 		std::string s2 = av[3];
-		std::string s_read = filename + ".replace";
-		
+		std::string string;
+		std::string s_read = filename.append(".replace");
+		int	pos = 0;
+
 		std::ifstream ifs(av[1]); // lecture du fichier input
 		if (!ifs.is_open())
 		{
 			std::cerr << "error : Open file failed." << std::endl;
 			exit(EXIT_FAILURE);
 		}
-		while (!ifs.eof())
+		std::ofstream ofs(s_read.c_str());
+		if (!ofs.is_open())
 		{
-			if (std::getline(ifs, s_read))
-				std::cout << s_read << std::endl;
-			else
-				exit(EXIT_FAILURE);
-			if (s_read.find(s1))
-			{
-				
-			}
+			std::cerr << "error : Open file failed." << std::endl;
+			exit(EXIT_FAILURE);
 		}
+		while (std::getline(ifs, string))
+		{
+			while (pos >= 0)
+			{
+				pos = string.find(s1);
+				if (pos >= 0)
+				{
+					string.erase(pos, s1.length());
+					string.insert(pos, s2);
+					pos += s2.length();
+				}
+			}
+			if (ofs.is_open())
+				ofs << string << std::endl;
+			pos = 0;
+		}
+		ofs.close();
 		ifs.close();
-		// std::ofstream ofs(s_read)
-		// if (!ofstream.is_())
 	}
 	else
 	{
@@ -52,8 +64,3 @@ int main(int ac, char **av)
 	}
 	return (0);
 }
-
-// SUJET
-// <filename>.replace : remplacer s1 par s2
-// tout std::string OK sauf std::string.replace
-// gerer les != inputs et errors

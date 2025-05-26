@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Moon <Moon@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 15:37:36 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/06 10:08:50 by Moon             ###   ########.fr       */
+/*   Updated: 2025/05/27 01:03:27 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string>
 #include <cctype>
 #include <iomanip>
+#include <cstdlib>
 
 class Contact{
 
@@ -31,7 +32,7 @@ public:
 	Contact(void);
 	~Contact(void);
 
-	int 	phone_is_digit();
+	int 	phone_is_digit(std::string number);
 	int		printable_infos(std::string &string);
 	void	infos_contact(void);
 	void	all_infos(void) const;
