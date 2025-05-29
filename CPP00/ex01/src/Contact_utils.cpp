@@ -1,6 +1,7 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 #include <stdio.h>
+
 // contient tjs 1 parametre par defaut = pointeur sur instance courante
 void Contact::infos_contact()
 {
