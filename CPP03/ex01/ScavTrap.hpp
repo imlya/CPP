@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 14:40:42 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 14:52:13 by imatek           ###   ########.fr       */
+/*   Created: 2025/05/30 15:08:43 by imatek            #+#    #+#             */
+/*   Updated: 2025/05/30 15:55:06 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+
+#include <iostream>
+
 #include "ClapTrap.hpp"
 
-int main()
-{
-	ClapTrap a ("castor");
-	ClapTrap b ("dog");
-	ClapTrap c (b);
+class ScavTrap : public ClapTrap
+{	
+	public :
+		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const& copy);
+		ScavTrap& operator=(ScavTrap const& copy);
+		~ScavTrap(void);
+		
+		void attack(const std::string& target);
+		void guardGate();
+};
 
-	a.attack("dog");
-	b.takeDamage(10);
-	b.beRepaired(5);
-	c.beRepaired(5);
-	return (0);
-}
+#endif

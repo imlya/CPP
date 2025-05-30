@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 14:40:42 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 14:52:13 by imatek           ###   ########.fr       */
+/*   Created: 2025/05/30 17:05:58 by imatek            #+#    #+#             */
+/*   Updated: 2025/05/30 17:49:05 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
 
-int main()
-{
-	ClapTrap a ("castor");
-	ClapTrap b ("dog");
-	ClapTrap c (b);
+#include <iostream>
+#include "Animal.hpp"
 
-	a.attack("dog");
-	b.takeDamage(10);
-	b.beRepaired(5);
-	c.beRepaired(5);
-	return (0);
-}
+class Dog : public Animal {
+	public :
+		Dog(void);
+		Dog(Dog const& copy);
+		Dog& operator=(Dog const& copy);
+		~Dog(void);
+
+		void makeSound(void) const;
+};
+
+#endif

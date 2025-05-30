@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 14:40:42 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 14:52:13 by imatek           ###   ########.fr       */
+/*   Created: 2025/05/30 18:34:44 by imatek            #+#    #+#             */
+/*   Updated: 2025/05/30 19:32:18 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-int main()
-{
-	ClapTrap a ("castor");
-	ClapTrap b ("dog");
-	ClapTrap c (b);
+#include <iostream>
 
-	a.attack("dog");
-	b.takeDamage(10);
-	b.beRepaired(5);
-	c.beRepaired(5);
-	return (0);
-}
+class Brain{
+	private :
+		std::string _ideas[100];
+		
+	public :
+		Brain(void);
+		Brain(Brain const& copy);
+		Brain& operator=(Brain const& copy);
+		~Brain(void);
+};
+
+#endif

@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 14:40:42 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 14:52:13 by imatek           ###   ########.fr       */
+/*   Created: 2025/05/30 16:05:59 by imatek            #+#    #+#             */
+/*   Updated: 2025/05/30 16:15:03 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int main()
-{
-	ClapTrap a ("castor");
-	ClapTrap b ("dog");
-	ClapTrap c (b);
+class FragTrap : public ClapTrap
+{	
+	public :
+		FragTrap(std::string name);
+		FragTrap(FragTrap const& copy);
+		FragTrap& operator=(FragTrap const& copy);
+		~FragTrap(void);
+		
+		void highFivesGuys(void);
+};
 
-	a.attack("dog");
-	b.takeDamage(10);
-	b.beRepaired(5);
-	c.beRepaired(5);
-	return (0);
-}
+#endif

@@ -6,11 +6,12 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 14:40:42 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 14:52:13 by imatek           ###   ########.fr       */
+/*   Updated: 2025/05/30 16:23:04 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
@@ -18,9 +19,17 @@ int main()
 	ClapTrap b ("dog");
 	ClapTrap c (b);
 
+	ScavTrap d ("castor");
+
+	FragTrap e("dog");
+
 	a.attack("dog");
 	b.takeDamage(10);
 	b.beRepaired(5);
 	c.beRepaired(5);
+	d.attack("dog");
+	d.guardGate();
+	e.beRepaired(1);
+	e.highFivesGuys();
 	return (0);
 }

@@ -1,8 +1,8 @@
-NAME= serenaMyLove
-SRC= main.cpp ClapTrap.cpp ScavTrap.cpp
+NAME= brulerLeMonde
+SRC= main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 OBJS= $(SRC:.cpp=.o)
 CC= c++
-CFLAGS= -Wall -Wextra -Werror -std=c++98
+CFLAGS= -Wall -Wextra -Werror -std=c++98 -g3
 RM= rm -f
 
 RESET = \033[0m
@@ -13,7 +13,7 @@ CYAN = \033[36m
 RED = \033[31m
 MAGENTA = \033[35m
 
-TITLE= "\n$(MAGENTA)====================================$(RESET)\n$(CYAN)      CPP03/EX01  :  SERENA, MY LOVE!   $(RESET)\n$(MAGENTA)====================================$(RESET)\n"
+TITLE= "\n$(MAGENTA)====================================$(RESET)\n$(CYAN)      CPP04/EX01  :  BRULER LE MONDE  $(RESET)\n$(MAGENTA)====================================$(RESET)\n"
 
 all: title $(NAME)
 

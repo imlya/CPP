@@ -5,22 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 14:40:42 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 14:52:13 by imatek           ###   ########.fr       */
+/*   Created: 2025/05/30 17:02:01 by imatek            #+#    #+#             */
+/*   Updated: 2025/05/30 17:42:36 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
 int main()
 {
-	ClapTrap a ("castor");
-	ClapTrap b ("dog");
-	ClapTrap c (b);
-
-	a.attack("dog");
-	b.takeDamage(10);
-	b.beRepaired(5);
-	c.beRepaired(5);
+	const Animal *meta = new Animal();
+	const Animal *j = new Dog();
+	const Animal *i = new Cat();
+	
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound();
+	j->makeSound();
+	meta->makeSound();
+	
+	delete(i);
+	delete(j);
+	delete(meta);
 	return (0);
 }

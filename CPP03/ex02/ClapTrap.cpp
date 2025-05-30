@@ -6,13 +6,13 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 21:27:26 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 14:51:31 by imatek           ###   ########.fr       */
+/*   Updated: 2025/05/30 15:46:13 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hit(10), _energy(10), _attakDamage(0)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hit(10), _energy(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap " << _name << " has been created!" << std::endl;
 }
@@ -30,7 +30,7 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &copy)
 		this->_name = copy._name;
 		this->_hit = copy._hit;
 		this->_energy = copy._energy;
-		this->_attakDamage = copy._attakDamage;
+		this->_attackDamage = copy._attackDamage;
 	}
 	return (*this);
 }
@@ -44,7 +44,7 @@ void ClapTrap::attack(const std::string &target){
 	if (_energy > 0 && _hit > 0)
 	{
 		_energy--;
-		std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attakDamage << " points of damage!" << std::endl;
+		std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
 	}
 	else
 		std::cout << "No energy or hitpoints to attack!" << std::endl;

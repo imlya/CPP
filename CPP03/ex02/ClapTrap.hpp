@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 21:27:28 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 14:35:06 by imatek           ###   ########.fr       */
+/*   Updated: 2025/05/30 16:03:31 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@
 #include <iostream>
 
 class ClapTrap{
-	private :
+	protected :
 		std::string _name;
-		int _hit;
-		int _energy;
-		int _attakDamage;
+		int _hit, _energy, _attackDamage;
 		
 	public :
 		ClapTrap(std::string name);

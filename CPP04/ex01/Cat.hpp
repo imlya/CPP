@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 14:40:42 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 14:52:13 by imatek           ###   ########.fr       */
+/*   Created: 2025/05/30 17:05:51 by imatek            #+#    #+#             */
+/*   Updated: 2025/05/30 18:43:18 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int main()
-{
-	ClapTrap a ("castor");
-	ClapTrap b ("dog");
-	ClapTrap c (b);
+#include <iostream>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-	a.attack("dog");
-	b.takeDamage(10);
-	b.beRepaired(5);
-	c.beRepaired(5);
-	return (0);
-}
+class Cat : public Animal {
+	private :
+		Brain* _brain;
+		
+	public :
+		Cat(void);
+		Cat(Cat const& copy);
+		Cat& operator=(Cat const& copy);
+		~Cat(void);
+
+		void makeSound(void) const;
+};
+
+#endif

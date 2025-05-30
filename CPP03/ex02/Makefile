@@ -1,5 +1,5 @@
-NAME= OnPeutParler
-SRC= main.cpp Fixed.cpp
+NAME= repetitiveWork
+SRC= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJS= $(SRC:.cpp=.o)
 CC= c++
 CFLAGS= -Wall -Wextra -Werror -std=c++98
@@ -13,7 +13,7 @@ CYAN = \033[36m
 RED = \033[31m
 MAGENTA = \033[35m
 
-TITLE= "\n$(MAGENTA)====================================$(RESET)\n$(CYAN)      CPP02/EX02  :  ON PEUT PARLER       $(RESET)\n$(MAGENTA)====================================$(RESET)\n"
+TITLE= "\n$(MAGENTA)====================================$(RESET)\n$(CYAN)      CPP03/EX02  :  REPETITIVE WORK  $(RESET)\n$(MAGENTA)====================================$(RESET)\n"
 
 all: title $(NAME)
 

@@ -5,22 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 14:40:42 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 14:52:13 by imatek           ###   ########.fr       */
+/*   Created: 2025/05/30 17:02:01 by imatek            #+#    #+#             */
+/*   Updated: 2025/05/30 19:25:56 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
 int main()
 {
-	ClapTrap a ("castor");
-	ClapTrap b ("dog");
-	ClapTrap c (b);
+	Animal *animal[10];
 
-	a.attack("dog");
-	b.takeDamage(10);
-	b.beRepaired(5);
-	c.beRepaired(5);
+	for (int i = 0; i < 5; i++)
+		animal[i] = new Dog();
+	for (int i = 5; i < 10; i++)
+		animal[i] = new Cat();
+	for(int i = 0; i < 10; i++)
+		animal[i]->makeSound();
+	Cat cat = Cat();
+	Cat catCopy = Cat(cat);
+	// catCopy = cat;
+	catCopy.makeSound();
+	for(int i = 0; i < 10; i++)
+		delete(animal[i]);
 	return (0);
 }

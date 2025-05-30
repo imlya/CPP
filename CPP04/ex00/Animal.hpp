@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 14:40:42 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 14:52:13 by imatek           ###   ########.fr       */
+/*   Created: 2025/05/30 17:03:06 by imatek            #+#    #+#             */
+/*   Updated: 2025/05/30 17:49:48 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-int main()
+#include <iostream>
+
+class Animal
 {
-	ClapTrap a ("castor");
-	ClapTrap b ("dog");
-	ClapTrap c (b);
+	protected:
+		std::string _type;
 
-	a.attack("dog");
-	b.takeDamage(10);
-	b.beRepaired(5);
-	c.beRepaired(5);
-	return (0);
-}
+	public:
+		Animal(void);
+		Animal(Animal const &copy);
+		Animal &operator=(Animal const &copy);
+		virtual ~Animal(void);
+
+		std::string getType(void) const;
+		virtual void makeSound(void) const;
+};
+
+#endif
