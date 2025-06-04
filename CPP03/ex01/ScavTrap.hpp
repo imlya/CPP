@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 15:08:43 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 15:55:06 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/04 11:46:10 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define SCAVTRAP_HPP
 
 #include <iostream>
-
 #include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap

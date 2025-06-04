@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 13:39:25 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/02 10:20:17 by imatek           ###   ########.fr       */
+/*   Created: 2025/06/02 13:08:30 by imatek            #+#    #+#             */
+/*   Updated: 2025/06/02 13:25:54 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef CURE_HPP
+#define CURE_HPP
 
-int main(int ac, char **av)
+#include <iostream>
+#include "AMateria.hpp"
+
+class Cure : AMateria 
 {
-    if (ac == 1)
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-    for (int i = 1; av[i]; i++)
-        for (int j = 0; av[i][j] ; j++)
-            std::cout << (char)toupper(av[i][j]);
-    std::cout << std::endl;
-}
+	private:
+		std::string _cure;
+
+	public:
+		Cure(void);
+		Cure(Cure const &copy);
+		Cure &operator=(Cure const &copy);
+		~Cure(void);
+
+		void use(ICharacter& target);
+};
+
+#endif

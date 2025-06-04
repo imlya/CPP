@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 13:55:12 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/12 17:19:12 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/02 10:38:51 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Zombie::Zombie(std::string name): _name(name)
 {
-	return;
+	return ;
 }
 
 Zombie::~Zombie()

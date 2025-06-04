@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 13:39:25 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/02 10:20:17 by imatek           ###   ########.fr       */
+/*   Created: 2025/06/02 12:15:51 by imatek            #+#    #+#             */
+/*   Updated: 2025/06/02 13:40:40 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
 
-int main(int ac, char **av)
+#include <iostream>
+#include <cstring>
+
+class AMateria
 {
-    if (ac == 1)
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-    for (int i = 1; av[i]; i++)
-        for (int j = 0; av[i][j] ; j++)
-            std::cout << (char)toupper(av[i][j]);
-    std::cout << std::endl;
-}
+	protected:
+		std::string _type;
+
+	public:
+		AMateria(void);
+		AMateria(AMateria const &copy);
+		AMateria &operator=(AMateria const &copy);
+		virtual ~AMateria(void);
+		
+		std::string const& getType() const;
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
+};
+
+#endif

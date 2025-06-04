@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 17:03:08 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 19:46:48 by imatek           ###   ########.fr       */
+/*   Created: 2025/06/02 13:16:19 by imatek            #+#    #+#             */
+/*   Updated: 2025/06/02 13:28:21 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Ice.hpp"
 
-Animal::Animal() {
-	std::cout <<  "Animal has been created!" << std::endl;
+Ice::Ice() {
+	std::cout <<  "Ice has been created!" << std::endl;
 }
 
-Animal::Animal(Animal const &copy)
+Ice::Ice(Ice const &copy)
 {
 	*this = copy;
-	std::cout << "Animal copy " << _type << " has been created!" << std::endl;
+	std::cout << "Ice copy " << _ice << " has been created!" << std::endl;
 }
 
-Animal &Animal::operator=(Animal const &copy)
+Ice &Ice::operator=(Ice const &copy)
 {
 	if (this != &copy)
-		this->_type = copy._type;
+		this->_ice = copy._ice;
 	return (*this);
 }
 
-Animal::~Animal()
+Ice::~Ice()
 {
-	std::cout << _type << "Animal has been destroyed!" << std::endl;
+	std::cout << _ice << "AMateria has been destroyed!" << std::endl;
 }
 
-std::string Animal::getType() const{
-	return (_type);
+void Ice::use(ICharacter& target)
+{
+	std::cout << "* heals " << _name << "’s wounds *" << std::endl;
 }

@@ -6,13 +6,13 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:08:12 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 19:30:53 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/02 12:14:31 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal()
+Cat::Cat() : AAnimal()
 {
 	_brain = new Brain();
 	_type = "Cat";

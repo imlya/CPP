@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 15:37:39 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/07 10:48:46 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/02 11:04:01 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ private:
 
 	Contact contacts[8];
 	int _index;
+	int _nbContact;
 
 public:
 

@@ -1,5 +1,5 @@
-NAME= AnnnnndOPEN
-SRC= main.cpp ClapTrap.cpp
+NAME= classeAbstraite
+SRC= main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 OBJS= $(SRC:.cpp=.o)
 CC= c++
 CFLAGS= -Wall -Wextra -Werror -std=c++98
@@ -13,7 +13,7 @@ CYAN = \033[36m
 RED = \033[31m
 MAGENTA = \033[35m
 
-TITLE= "\n$(MAGENTA)====================================$(RESET)\n$(CYAN)   CPP03/EX00  :  ANNNND... OPEN       $(RESET)\n$(MAGENTA)====================================$(RESET)\n"
+TITLE= "\n$(MAGENTA)====================================$(RESET)\n$(CYAN)   CPP04/EX03  :  CLASSE ABSTRAITE  $(RESET)\n$(MAGENTA)====================================$(RESET)\n"
 
 all: title $(NAME)
 

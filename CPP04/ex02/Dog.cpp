@@ -6,13 +6,13 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:07:57 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 18:59:27 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/02 12:14:26 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal()
+Dog::Dog() : AAnimal()
 {
 	_type = "Dog";
 	_brain = new Brain();
