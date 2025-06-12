@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:05:51 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/04 12:10:39 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 18:16:05 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 #include <iostream>
 #include "Animal.hpp"
 
-class Cat : public Animal {
+class Cat : public Animal 
+{
 	public :
 		Cat(void);
-		Cat(Cat const& copy);
-		Cat& operator=(Cat const& copy);
+		Cat(Cat const& src);
+		Cat& operator=(Cat const& src);
 		~Cat(void);
 
 		void makeSound(void) const;

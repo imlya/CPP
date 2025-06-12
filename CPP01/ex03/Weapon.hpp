@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 18:02:43 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/14 16:25:54 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 14:54:51 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 #include <string>
 #include <iostream>
 
-class Weapon{
+class Weapon
+{
 	private:
 		std::string _type;
 	

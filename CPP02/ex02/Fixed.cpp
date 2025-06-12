@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 23:00:02 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 13:15:04 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:09:06 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,69 +26,72 @@ Fixed::Fixed(float const f)
 	this->_rawBits = roundf(f * (1 << this->_fractBits));
 }
 
-Fixed::Fixed(Fixed const &copy)
+Fixed::Fixed(Fixed const &src)
 {
-	*this = copy;
+	*this = src;
 }
 
-Fixed &Fixed::operator=(Fixed const &copy)
+Fixed &Fixed::operator=(Fixed const &src)
 {
-	if (this != &copy)
-		this->_rawBits = copy.getRawBits();
+	if (this != &src)
+		this->_rawBits = src.getRawBits();
 	return (*this);
 }
 
-bool Fixed::operator>(Fixed const &copy) const
+bool Fixed::operator>(Fixed const &src) const
 {
-	return (this->_rawBits > copy.getRawBits());
+	return (this->_rawBits > src.getRawBits());
 }
 
-bool Fixed::operator<(Fixed const &copy) const
+bool Fixed::operator<(Fixed const &src) const
 {
-	return (this->_rawBits < copy.getRawBits());
+	return (this->_rawBits < src.getRawBits());
 }
 
-bool Fixed::operator>=(Fixed const &copy) const
+bool Fixed::operator>=(Fixed const &src) const
 {
-	return (this->_rawBits >= copy.getRawBits());
+	return (this->_rawBits >= src.getRawBits());
 }
 
-bool Fixed::operator<=(Fixed const &copy) const
+bool Fixed::operator<=(Fixed const &src) const
 {
-	return (this->_rawBits <= copy.getRawBits());
+	return (this->_rawBits <= src.getRawBits());
 }
 
-bool Fixed::operator==(Fixed const &copy) const
+bool Fixed::operator==(Fixed const &src) const
 {
-	return (this->_rawBits == copy.getRawBits());
+	return (this->_rawBits == src.getRawBits());
 }
 
-bool Fixed::operator!=(Fixed const &copy) const
+bool Fixed::operator!=(Fixed const &src) const
 {
-	return (this->_rawBits != copy.getRawBits());
+	return (this->_rawBits != src.getRawBits());
 }
 
-Fixed &Fixed::operator+(Fixed const &copy)
+Fixed &Fixed::operator+(Fixed const &src)
 {
-	this->_rawBits += copy.getRawBits();
+	this->_rawBits += src.getRawBits();
 	return (*this);
 }
 
-Fixed &Fixed::operator-(Fixed const &copy)
+Fixed &Fixed::operator-(Fixed const &src)
 {
-	this->_rawBits -= copy.getRawBits();
+	this->_rawBits -= src.getRawBits();
 	return (*this);
 }
 
-Fixed &Fixed::operator*(Fixed const &copy)
+Fixed &Fixed::operator*(Fixed const &src)
 {
-	this->_rawBits *= copy.getRawBits() >> this->_fractBits;
+	this->_rawBits *= src.getRawBits() >> this->_fractBits;
 	return (*this);
 }
 
-Fixed &Fixed::operator/(Fixed const &copy)
+Fixed &Fixed::operator/(Fixed const &src)
 {
-	this->_rawBits /= copy.getRawBits();
+	if (src.getRawBits())
+		this->_rawBits /= src.getRawBits();
+	else
+		this->_rawBits = 0;
 	return (*this);
 }
 
@@ -100,9 +103,9 @@ Fixed &Fixed::operator++()
 
 Fixed Fixed::operator++(int)
 {
-	Fixed copy = Fixed(*this);
+	Fixed src = Fixed(*this);
 	this->_rawBits++;
-	return (copy);
+	return (src);
 }
 
 Fixed &Fixed::operator--()
@@ -113,9 +116,9 @@ Fixed &Fixed::operator--()
 
 Fixed Fixed::operator--(int)
 {
-	Fixed copy = Fixed(*this);
+	Fixed src = Fixed(*this);
 	this->_rawBits--;
-	return (copy);
+	return (src);
 }
 
 Fixed& Fixed::min(Fixed &a, Fixed &b){
@@ -158,8 +161,8 @@ int Fixed::toInt(void) const
 	return (_rawBits / (1 << this->_fractBits));
 }
 
-std::ostream &operator<<(std::ostream &flux, Fixed const &copy)
+std::ostream &operator<<(std::ostream &flux, Fixed const &src)
 {
-	flux << copy.toFloat();
+	flux << src.toFloat();
 	return (flux);
 }

@@ -1,5 +1,5 @@
 NAME= polymorphisme
-SRC= main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRC= main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp
 OBJS= $(SRC:.cpp=.o)
 CC= c++
 CFLAGS= -Wall -Wextra -Werror -std=c++98

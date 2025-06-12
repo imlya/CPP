@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 11:50:46 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/26 22:33:57 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 15:21:50 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,25 +53,21 @@ void Harl::complain(std::string level)
 		{
 			switch (i)
 			{
-			case 0:
-				std::cout << "[ DEBUG ]" << std::endl;
-				_debug();
-				std::cout << std::endl;
-			case 1:
-				std::cout << "[ INFO ]" << std::endl;
-				_info();
-				std::cout << std::endl;
-			case 2:
-				std::cout << "[ WARNING ]" << std::endl;
-				_warning();
-				std::cout << std::endl;
-			case 3:
-				std::cout << "[ ERROR ]" << std::endl;
-				_error();
-				std::cout << std::endl;
-				break;
-			default:
-				break;
+				case 0:
+					std::cout << "[ DEBUG ]" << std::endl; _debug();
+					std::cout << std::endl;
+				case 1:
+					std::cout << "[ INFO ]" << std::endl; _info();
+					std::cout << std::endl;
+				case 2:
+					std::cout << "[ WARNING ]" << std::endl; _warning();
+					std::cout << std::endl;
+				case 3:
+					std::cout << "[ ERROR ]" << std::endl; _error();
+					std::cout << std::endl;
+					break;
+				default:
+					break;
 			}
 		}
 	}

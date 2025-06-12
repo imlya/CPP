@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 22:59:59 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 13:15:08 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,20 @@ public:
 	Fixed(void);
 	Fixed(int const i);
 	Fixed(float const f);
-	Fixed(Fixed const &copy);			 // constructeur de copie (nvlle instance cree)
-	Fixed &operator=(Fixed const &copy); // operateur d'affection (=) (maj de l'instance courante)
+	Fixed(Fixed const &src);			 // constructeur de copie (nvlle instance cree)
+	Fixed &operator=(Fixed const &src); // operateur d'affection (=) (maj de l'instance courante)
 	~Fixed(void);
 
-	bool operator>(Fixed const &copy) const;
-	bool operator<(Fixed const &copy) const;
-	bool operator>=(Fixed const &copy) const;
-	bool operator<=(Fixed const &copy) const;
-	bool operator==(Fixed const &copy) const;
-	bool operator!=(Fixed const &copy) const;
-	Fixed &operator+(Fixed const &copy);
-	Fixed &operator-(Fixed const &copy);
-	Fixed &operator*(Fixed const &copy);
-	Fixed &operator/(Fixed const &copy);
+	bool operator>(Fixed const &src) const;
+	bool operator<(Fixed const &src) const;
+	bool operator>=(Fixed const &src) const;
+	bool operator<=(Fixed const &src) const;
+	bool operator==(Fixed const &src) const;
+	bool operator!=(Fixed const &src) const;
+	Fixed &operator+(Fixed const &src);
+	Fixed &operator-(Fixed const &src);
+	Fixed &operator*(Fixed const &src);
+	Fixed &operator/(Fixed const &src);
 	Fixed &operator++();
 	Fixed operator++(int);
 	Fixed &operator--();
@@ -55,6 +55,6 @@ public:
 	int toInt(void) const;
 };
 
-std::ostream &operator<<(std::ostream &flux, Fixed const &copy); // operateur d'insertion (<<)
+std::ostream &operator<<(std::ostream &flux, Fixed const &src); // operateur d'insertion (<<)
 
 #endif

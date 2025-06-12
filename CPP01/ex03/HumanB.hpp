@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 18:02:35 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/14 17:44:30 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 14:56:08 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #include <iostream>
 #include <string>
 
-class HumanB{
-	
+class HumanB
+{
 	private:
 		Weapon *_WeaponB;
 		std::string _name;

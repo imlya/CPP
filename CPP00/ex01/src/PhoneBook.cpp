@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 15:37:48 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/02 11:50:34 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 14:27:48 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void PhoneBook::search()
 {
 	print_list();
 	std::cout << "Please choose an index" << std::endl;
-	// utiliser getline au lieu de cin
 	std::string entry;
 	getline(std::cin, entry);
 	if (entry.length() != 1 || !std::isdigit(entry[0]))
@@ -74,5 +73,4 @@ void PhoneBook::search()
 	}
 	else 
 		contacts[nb].all_infos();
-	
 }

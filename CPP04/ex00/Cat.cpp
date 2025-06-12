@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:08:12 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 17:51:07 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ Cat::Cat() : Animal()
 	std::cout << _type << " has been created!" << std::endl;
 }
 
-Cat::Cat(Cat const &copy) : Animal(copy)
+Cat::Cat(Cat const &src) : Animal(src)
 {
-	std::cout << "Cat copy " << _type << " has been created!" << std::endl;
+	std::cout << "Cat src " << _type << " has been created!" << std::endl;
 }
 
-Cat &Cat::operator=(Cat const &copy)
+Cat &Cat::operator=(Cat const &src)
 {
-	Animal::operator=(copy);
+	Animal::operator=(src);
 	return (*this);
 }
 

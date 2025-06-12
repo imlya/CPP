@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 11:50:46 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/26 14:00:25 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:22:14 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,4 @@ void Harl::complain(std::string level)
 	for (int i = 0; i < 4; i++)
 		if (level == tab_level[i])
 			return (this->*fct[i])();
-	std::cout << "error : level not found" << std::endl;
 }

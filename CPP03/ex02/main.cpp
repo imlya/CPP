@@ -6,9 +6,10 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 14:40:42 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 16:23:04 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 18:06:16 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
@@ -19,9 +20,9 @@ int main()
 	ClapTrap b ("dog");
 	ClapTrap c (b);
 
-	ScavTrap d ("castor");
+	ScavTrap d ("cat");
 
-	FragTrap e("dog");
+	FragTrap e("lion");
 
 	a.attack("dog");
 	b.takeDamage(10);

@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/29 21:27:28 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/12 17:07:58 by imatek           ###   ########.fr       */
+/*   Created: 2025/05/30 17:05:51 by imatek            #+#    #+#             */
+/*   Updated: 2025/06/12 18:29:06 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 #include <iostream>
+#include "WrongAnimal.hpp"
 
-class ClapTrap
+class WrongCat : public WrongAnimal 
 {
-	private :
-		std::string _name;
-		int _hit;
-		int _energy;
-		int _attackDamage;
-		
 	public :
-		ClapTrap();
-		ClapTrap(std::string name);
-		ClapTrap(ClapTrap const& src);
-		ClapTrap& operator=(ClapTrap const& src);
-		~ClapTrap(void);
+		WrongCat(void);
+		WrongCat(WrongCat const& src);
+		WrongCat& operator=(WrongCat const& src);
+		~WrongCat(void);
 
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		void makeSound(void) const;
 };
 
 #endif

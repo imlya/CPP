@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:03:06 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/02 12:11:33 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class AAnimal
 
 	public:
 		AAnimal(void);
-		AAnimal(AAnimal const &copy);
-		AAnimal &operator=(AAnimal const &copy);
+		AAnimal(AAnimal const &src);
+		AAnimal &operator=(AAnimal const &src);
 		virtual ~AAnimal(void);
 
 		std::string getType(void) const;

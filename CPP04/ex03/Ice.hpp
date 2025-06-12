@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 13:08:34 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/02 13:22:16 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@ class Ice : public AMateria
 
 	public:
 		Ice(void);
-		Ice(Ice const &copy);
-		Ice &operator=(Ice const &copy);
+		Ice(Ice const &src);
+		Ice &operator=(Ice const &src);
 		~Ice(void);
 
+		virtual Ice clone() const;
 		void use(ICharacter& target);
 };
 

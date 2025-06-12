@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 13:55:14 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/02 10:37:24 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 14:39:04 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void randomChump(std::string name)
 {
-	Zombie random = Zombie(name); //stack
+	Zombie random(name); //stack
 	random.announce();
 }

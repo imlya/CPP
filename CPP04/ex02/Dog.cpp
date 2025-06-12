@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:07:57 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/02 12:14:26 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ Dog::Dog() : AAnimal()
 	std::cout << _type << " has been created!" << std::endl;
 }
 
-Dog::Dog(Dog const &copy)
+Dog::Dog(Dog const &src)
 {
-	*this = copy;
-	std::cout << "Dog copy " << _type << " has been created!" << std::endl;
+	*this = src;
+	std::cout << "Dog src " << _type << " has been created!" << std::endl;
 }
 
-Dog &Dog::operator=(Dog const &copy)
+Dog &Dog::operator=(Dog const &src)
 {
-	if (this != &copy)
+	if (this != &src)
 	{
 		delete(_brain);
-		this->_type = copy._type;
-		this->_brain = new Brain(*copy._brain);
+		this->_type = src._type;
+		this->_brain = new Brain(*src._brain);
 	}
 	return (*this);
 }

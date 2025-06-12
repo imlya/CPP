@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:03:06 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 17:49:48 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Animal
 
 	public:
 		Animal(void);
-		Animal(Animal const &copy);
-		Animal &operator=(Animal const &copy);
+		Animal(Animal const &src);
+		Animal &operator=(Animal const &src);
 		virtual ~Animal(void);
 
 		std::string getType(void) const;

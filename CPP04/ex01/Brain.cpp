@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:34:48 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 19:08:05 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@ Brain::Brain() {
 	std::cout <<  "Brain has been created!" << std::endl;
 }
 
-Brain::Brain(Brain const &copy)
+Brain::Brain(Brain const &src)
 {
-	*this = copy;
-	std::cout << "Brain copy has been created!" << std::endl;
+	*this = src;
+	std::cout << "Brain src has been created!" << std::endl;
 }
 
-Brain &Brain::operator=(Brain const &copy)
+Brain &Brain::operator=(Brain const &src)
 {
-	if (this != &copy)
+	if (this != &src)
 	{
 		for (int i = 0; i < 100; i++)
-			_ideas[i] = copy._ideas[i];
+			_ideas[i] = src._ideas[i];
 	}
 	return (*this);
 }

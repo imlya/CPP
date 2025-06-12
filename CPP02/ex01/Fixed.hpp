@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 22:59:59 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/29 16:46:49 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ public:
 	Fixed(void);
 	Fixed(int const i);
 	Fixed(float const f);
-	Fixed(Fixed const &copy); // constructeur de copie (nvlle instance cree)
 	~Fixed(void);
+	Fixed(Fixed const &src); // constructeur de copie (nvlle instance cree)
+	Fixed &operator=(Fixed const &src); // operateur d'affection (=) (maj de l'instance courante)
 
-	Fixed &operator=(Fixed const &copy); // operateur d'affection (=) (maj de l'instance courante)
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 	float toFloat(void) const;
 	int toInt(void) const;
 };
 
-std::ostream& operator<<(std::ostream& flux, Fixed const& copy); // operateur d'insertion (<<)
+std::ostream& operator<<(std::ostream& flux, Fixed const& src); // operateur d'insertion (<<)
 
 #endif

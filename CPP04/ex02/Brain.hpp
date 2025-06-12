@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:34:44 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 19:32:18 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Brain{
 		
 	public :
 		Brain(void);
-		Brain(Brain const& copy);
-		Brain& operator=(Brain const& copy);
+		Brain(Brain const& src);
+		Brain& operator=(Brain const& src);
 		~Brain(void);
 };
 

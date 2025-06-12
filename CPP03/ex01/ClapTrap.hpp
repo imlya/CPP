@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 21:27:28 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 16:03:31 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 17:06:29 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 
 #include <iostream>
 
-class ClapTrap{
+class ClapTrap
+{
 	protected :
 		std::string _name;
 		int _hit, _energy, _attackDamage;
 		
 	public :
+		ClapTrap();
 		ClapTrap(std::string name);
-		ClapTrap(ClapTrap const& copy);
-		ClapTrap& operator=(ClapTrap const& copy);
+		ClapTrap(ClapTrap const& src);
+		ClapTrap& operator=(ClapTrap const& src);
 		~ClapTrap(void);
 
 		void attack(const std::string& target);

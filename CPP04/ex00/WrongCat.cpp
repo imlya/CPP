@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,39 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat() : AAnimal()
+WrongCat::WrongCat() : WrongAnimal()
 {
-	_brain = new Brain();
-	_type = "Cat";
+	_type = "WrongCat";
 	std::cout << _type << " has been created!" << std::endl;
 }
 
-Cat::Cat(Cat const &src)
+WrongCat::WrongCat(WrongCat const &src) : WrongAnimal(src)
 {
-	*this = src;
-	std::cout << "Cat src " << _type << " has been created!" << std::endl;
+	std::cout << "WrongCat src " << _type << " has been created!" << std::endl;
 }
 
-Cat &Cat::operator=(Cat const &src)
+WrongCat &WrongCat::operator=(WrongCat const &src)
 {
-	if (this != &src)
-	{
-		if (!_type.empty())
-			delete (_brain);
-		this->_type = src._type;
-		this->_brain = new Brain(*src._brain);
-	}
+	WrongAnimal::operator=(src);
 	return (*this);
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	delete(_brain);
 	std::cout << _type << " has been destroyed!" << std::endl;
 }
 
-void Cat::makeSound() const{
+void WrongCat::makeSound() const{
 	std::cout << "The " << _type << " meow" << std::endl;
 }

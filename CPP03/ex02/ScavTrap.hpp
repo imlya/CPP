@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 15:08:43 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 16:11:19 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class ScavTrap : public ClapTrap
 {	
 	public :
 		ScavTrap(std::string name);
-		ScavTrap(ScavTrap const& copy);
-		ScavTrap& operator=(ScavTrap const& copy);
+		ScavTrap(ScavTrap const& src);
+		ScavTrap& operator=(ScavTrap const& src);
 		~ScavTrap(void);
 		
 		void attack(const std::string& target);

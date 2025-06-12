@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:03:08 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/02 12:13:10 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@ AAnimal::AAnimal() {
 	std::cout <<  "Animal has been created!" << std::endl;
 }
 
-AAnimal::AAnimal(AAnimal const &copy)
+AAnimal::AAnimal(AAnimal const &src)
 {
-	*this = copy;
-	std::cout << "Animal copy " << _type << " has been created!" << std::endl;
+	*this = src;
+	std::cout << "Animal src " << _type << " has been created!" << std::endl;
 }
 
-AAnimal &AAnimal::operator=(AAnimal const &copy)
+AAnimal &AAnimal::operator=(AAnimal const &src)
 {
-	if (this != &copy)
-		this->_type = copy._type;
+	if (this != &src)
+		this->_type = src._type;
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:05:58 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 18:43:39 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Dog : public Animal {
 		
 	public :
 		Dog(void);
-		Dog(Dog const& copy);
-		Dog& operator=(Dog const& copy);
+		Dog(Dog const& src);
+		Dog& operator=(Dog const& src);
 		~Dog(void);
 
 		void makeSound(void) const;

@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 13:16:19 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/02 13:28:21 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@ Ice::Ice() {
 	std::cout <<  "Ice has been created!" << std::endl;
 }
 
-Ice::Ice(Ice const &copy)
+Ice::Ice(Ice const &src)
 {
-	*this = copy;
-	std::cout << "Ice copy " << _ice << " has been created!" << std::endl;
+	*this = src;
+	std::cout << "Ice src " << _ice << " has been created!" << std::endl;
 }
 
-Ice &Ice::operator=(Ice const &copy)
+Ice &Ice::operator=(Ice const &src)
 {
-	if (this != &copy)
-		this->_ice = copy._ice;
+	if (this != &src)
+		this->_ice = src._ice;
 	return (*this);
 }
 

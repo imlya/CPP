@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:05:51 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/30 18:43:18 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Cat : public Animal {
 		
 	public :
 		Cat(void);
-		Cat(Cat const& copy);
-		Cat& operator=(Cat const& copy);
+		Cat(Cat const& src);
+		Cat& operator=(Cat const& src);
 		~Cat(void);
 
 		void makeSound(void) const;
