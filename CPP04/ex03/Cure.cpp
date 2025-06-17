@@ -6,39 +6,25 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 13:15:11 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/17 16:26:35 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure() {
-	std::cout <<  "Cure has been created!" << std::endl;
+Cure::Cure() : AMateria()
+{
+	type = "cure";
 }
 
-Cure::Cure(Cure const &src)
+Cure::~Cure() {}
+
+Cure* Cure::clone() const
 {
-	*this = src;
-	std::cout << "Cure src " << _cure << " has been created!" << std::endl;
+	return (new Cure(*this));
 }
 
-Cure &Cure::operator=(Cure const &src)
+void Cure::use(ICharacter& target)
 {
-	if (this != &src)
-		this->_cure = src._cure;
-	return (*this);
+	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 }
-
-Cure::~Cure()
-{
-	std::cout << _cure << "Cure has been destroyed!" << std::endl;
-}
-
-Cure Cure::*clone() const
-{
-	
-}
-// void Cure::use(ICharacter& target)
-// {
-	// std::cout << "* shoots an ice bolt at << _name << " *" <<std::endl;
-// }

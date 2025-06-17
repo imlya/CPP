@@ -1,5 +1,5 @@
 NAME= interface
-SRC= main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+SRC= main.cpp AMateria.cpp Cure.cpp Ice.cpp MateriaSource.cpp Character.cpp
 OBJS= $(SRC:.cpp=.o)
 CC= c++
 CFLAGS= -Wall -Wextra -Werror -std=c++98

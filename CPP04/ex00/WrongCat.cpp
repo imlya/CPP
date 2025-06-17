@@ -20,7 +20,7 @@ WrongCat::WrongCat() : WrongAnimal()
 
 WrongCat::WrongCat(WrongCat const &src) : WrongAnimal(src)
 {
-	std::cout << "WrongCat src " << _type << " has been created!" << std::endl;
+	std::cout << "WrongCat copy constructor is called for " << _type << std::endl;
 }
 
 WrongCat &WrongCat::operator=(WrongCat const &src)

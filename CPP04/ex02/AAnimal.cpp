@@ -6,20 +6,21 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:03:08 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/13 12:23:05 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AAnimal.hpp"
 
-AAnimal::AAnimal() {
-	std::cout <<  "Animal has been created!" << std::endl;
+AAnimal::AAnimal()
+{
+	std::cout << "AAnimal has been created!" << std::endl;
 }
 
 AAnimal::AAnimal(AAnimal const &src)
 {
 	*this = src;
-	std::cout << "Animal src " << _type << " has been created!" << std::endl;
+	std::cout << "AAnimal copy constructor is called for  " << _type << std::endl;
 }
 
 AAnimal &AAnimal::operator=(AAnimal const &src)
@@ -31,9 +32,10 @@ AAnimal &AAnimal::operator=(AAnimal const &src)
 
 AAnimal::~AAnimal()
 {
-	std::cout << _type << "Animal has been destroyed!" << std::endl;
+	std::cout << "AAnimal " << _type << " has been destroyed!" << std::endl;
 }
 
-std::string AAnimal::getType() const{
+std::string AAnimal::getType() const
+{
 	return (_type);
 }

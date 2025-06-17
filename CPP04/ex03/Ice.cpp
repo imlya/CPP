@@ -6,35 +6,25 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 13:16:19 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/17 16:29:47 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice() {
-	std::cout <<  "Ice has been created!" << std::endl;
-}
-
-Ice::Ice(Ice const &src)
+Ice::Ice() : AMateria()
 {
-	*this = src;
-	std::cout << "Ice src " << _ice << " has been created!" << std::endl;
+	type = "ice";
 }
+Ice::~Ice() {}
 
-Ice &Ice::operator=(Ice const &src)
+Ice* Ice::clone() const
 {
-	if (this != &src)
-		this->_ice = src._ice;
-	return (*this);
-}
-
-Ice::~Ice()
-{
-	std::cout << _ice << "AMateria has been destroyed!" << std::endl;
+	return (new Ice(*this)); // appel de la copie exacte de l'instance
+	// delete systematiquement si on utilise la fonction clone
 }
 
 void Ice::use(ICharacter& target)
 {
-	std::cout << "* heals " << _name << "’s wounds *" << std::endl;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

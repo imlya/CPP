@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:02:01 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/12 18:42:04 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/13 11:59:42 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int main()
 	
 	delete(i);
 	delete(j);
+	delete(k);
 	delete(meta);
 	return (0);
 }

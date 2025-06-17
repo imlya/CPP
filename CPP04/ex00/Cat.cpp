@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:08:12 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/13 11:56:15 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Cat::Cat() : Animal()
 
 Cat::Cat(Cat const &src) : Animal(src)
 {
-	std::cout << "Cat src " << _type << " has been created!" << std::endl;
+	std::cout << "Cat copy constructor is called for " << _type << std::endl;
 }
 
 Cat &Cat::operator=(Cat const &src)
@@ -34,6 +34,7 @@ Cat::~Cat()
 	std::cout << _type << " has been destroyed!" << std::endl;
 }
 
-void Cat::makeSound() const{
+void Cat::makeSound() const
+{
 	std::cout << "The " << _type << " meow" << std::endl;
 }
