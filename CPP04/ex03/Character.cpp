@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 16:05:40 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/17 17:15:31 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/17 17:20:04 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,16 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int idx)
 {
-	if (!_invent[idx])
-		return ;
-	
+	if (idx >= 0 && idx < 4)
+	{
+		if (!_invent[idx])
+			return ;
+		if (_invent[idx])
+			_invent[idx] = NULL;
+	}
 }
 
-void Character::use(int idx, ICharacter &target){
+void Character::use(int idx, ICharacter &target)
+{
 	
 }
