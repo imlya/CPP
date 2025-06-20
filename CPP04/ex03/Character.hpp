@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 16:02:18 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/17 16:33:24 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/20 23:53:20 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Character : virtual public ICharacter
 {
 	private :
 		std::string _name;
-		AMateria* _invent[4];
+		AMateria* _items[4];
 		
 	public:
 		Character();
@@ -30,8 +30,11 @@ class Character : virtual public ICharacter
 		
 		std::string const &getName() const;
 		void equip(AMateria *m);
-		void unequip(int idx);
+		void unequip(int idx); //sans la delete
 		void use(int idx, ICharacter &target);
 };
 
 #endif
+
+// Character peut equip() une AMateria, 
+// sans se soucier de ce que la materia fait réellement.

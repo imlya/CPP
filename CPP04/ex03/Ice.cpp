@@ -6,16 +6,14 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 13:16:19 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/17 16:29:47 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/20 20:11:26 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice() : AMateria()
-{
-	type = "ice";
-}
+Ice::Ice() : AMateria("ice") {}
+
 Ice::~Ice() {}
 
 Ice* Ice::clone() const

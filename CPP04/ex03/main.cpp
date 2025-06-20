@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 15:39:21 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/17 16:27:37 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/20 23:48:55 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main()
 	src->learnMateria(new Cure());
 	
 	ICharacter *me = new Character("me");
-	AMateria *tmp;
+	AMateria *tmp; //AMateria ne peut etre instanciee
 	
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
@@ -45,3 +45,10 @@ int	main()
 }
 
 //test copy enfants (cure et ice)
+
+/*le personnage "me".
+va dans une bibliothèque magique et apprend le sort Ice et Cure.
+les équipe dans sa ceinture magique.
+rencontre un autre personnage, Bob, et :
+    lui jette un sort de glace,
+    puis le soigne.*/

@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 16:05:40 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/17 17:20:04 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/20 23:56:34 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Character::Character() : ICharacter() {}
 Character::Character(std::string name) :_name(name) 
 {
 	for (int i = 0; i < 4; i++)
-		_invent[i] = NULL;
+		_items[i] = NULL;
 }
 
 Character::~Character() {}
@@ -34,9 +34,9 @@ Character &Character::operator=(Character const &src)
 		_name = src._name;
 		for (int i = 0; i < 4; i++)
 		{
-			if (_invent[i])
-				delete(_invent[i]);
-			_invent[i] = src._invent[i]->clone();
+			if (_items[i])
+				delete(_items[i]);
+			_items[i] = src._items[i]->clone();
 		}
 	}
 	return (*this);
@@ -53,9 +53,9 @@ void Character::equip(AMateria *m)
 		return ;
 	for (int i = 0; i < 4; i++)
 	{
-		if (!_invent[i])
+		if (!_items[i])
 		{
-			_invent[i] = m;
+			_items[i] = m;
 			return ;
 		}
 	}
@@ -66,14 +66,15 @@ void Character::unequip(int idx)
 {
 	if (idx >= 0 && idx < 4)
 	{
-		if (!_invent[idx])
+		if (!_items[idx])
 			return ;
-		if (_invent[idx])
-			_invent[idx] = NULL;
+		if (_items[idx])
+			_items[idx] = NULL;
 	}
 }
 
 void Character::use(int idx, ICharacter &target)
 {
-	
+	if (idx >= 0 && idx < 4 && _items[idx])
+		_items[idx]->use(target);
 }

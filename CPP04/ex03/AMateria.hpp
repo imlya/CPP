@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 12:15:51 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/17 16:14:55 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/20 19:57:22 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include "ICharacter.hpp"
 
+class ICharacter ;
 class AMateria
 {
 	protected:
@@ -23,8 +24,8 @@ class AMateria
 
 	public:
 		AMateria();
-		AMateria(std::string const & type);
 		AMateria(AMateria const& src);
+		AMateria(std::string const & type);
 		AMateria& operator=(AMateria const& src);
 		virtual ~AMateria();
 		

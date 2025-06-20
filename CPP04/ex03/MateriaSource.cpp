@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 15:43:30 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/17 12:20:00 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/19 13:21:05 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,14 @@ MateriaSource::MateriaSource(MateriaSource const &src)
 MateriaSource& MateriaSource::operator=(MateriaSource const& src)
 {
 	if (this != &src)
-		this->type = src.type;
+		this->_type = src._type;
 	return (*this);
 }
 
 void MateriaSource::learnMateria(AMateria *)
 {
-	
 }
 
 AMateria* MateriaSource::createMateria(std::string const &src)
 {
-	
 }
