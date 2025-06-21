@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:02:01 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/13 12:15:51 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/21 18:47:48 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,55 @@
 
 int main()
 {
-	std::cout << "---------CONSTRUCTOR----------" << std::endl;
-	Animal *animal[10];
+	{
+		Animal* meta[4];
 
-	for (int i = 0; i < 5; i++)
-	{
-		std::cout << i << " : ";
-		animal[i] = new Dog();
+		Dog*	A = new Dog();
+		Cat*	B = new Cat();
+
+		Cat* 	C = new Cat();
+		Cat*	D = new Cat();
+
+
+		std::cout << "test deep copy" << std::endl;
+
+		*C = *D;
+		C->setBrain("I HAVE IDEA", 99);
+		D->setBrain("I HAVE IDEA FOR DEEP COPY", 99);
+
+		std::cout << C->getBrain(99) << std::endl;
+		std::cout << D->getBrain(99) << std::endl;
+
+		delete C;
+		delete D;
+		std::cout << "end test deep copy" << std::endl;
+		
+		{
+			Cat *other = new Cat(*B);
+			other->makeSound();
+			std::cout << other->getBrain(100) << std::endl;
+			delete other;
+		}
+
+		for (int i = 0; i < 4; i++)
+		{
+			if ( i % 2 == 0)
+				meta[i] = new Dog();
+			else
+				meta[i] = new Cat();
+		}
+		B->setBrain("I HAVE IDEA", 100);
+		B->setBrain("I HAVE IDEA", 99);
+
+		std::cout << " idea test: " << B->getBrain(100) << std::endl;
+		std::cout << " idea test: " << B->getBrain(99) << std::endl;
+		std::cout << " idea test: " << B->getBrain(98) << std::endl;
+
+		for (int i = 0; i < 4; i++)
+			delete meta[i];
+		delete A;
+		delete B;
+
 	}
-	for (int i = 5; i < 10; i++)
-	{
-		std::cout << i << " : ";
-		animal[i] = new Cat();
-	}
-	std::cout << "------------------------------" << std::endl;
-	for(int i = 0; i < 10; i++)
-		animal[i]->makeSound();
-	Cat cat = Cat();
-	Cat catsrc = Cat(cat);
-	catsrc.makeSound();
-	std::cout << "-----------DELETE-------------" << std::endl;
-	for(int i = 0; i < 10; i++)
-	{
-		std::cout << i << " : ";
-		delete(animal[i]);
-	}
-	std::cout << "----------DESTRUCTOR-----------" << std::endl;
-	return (0);
+	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 16:05:40 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/20 23:56:34 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/21 17:19:13 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,25 @@ Character::Character(std::string name) :_name(name)
 {
 	for (int i = 0; i < 4; i++)
 		_items[i] = NULL;
+
+	for (int i = 0; i < 1024; i++)
+		_dump[i] = NULL;
 }
 
-Character::~Character() {}
+Character::~Character() 
+{
+	for (int i = 0; i < 4; i++)
+	{
+		if (_items[i])
+			delete (_items[i]);
+	}
+
+	for (int i = 0; i < 1024; i++)
+	{
+		if (_dump[i])
+			delete (_dump[i]);
+	}
+}
 
 Character::Character(Character const &src)
 {
@@ -29,15 +45,29 @@ Character::Character(Character const &src)
 
 Character &Character::operator=(Character const &src)
 {
-	if (this != &src) //copie profonde (pas sur la meme adresse)
+	if (this != &src)
 	{
 		_name = src._name;
 		for (int i = 0; i < 4; i++)
 		{
 			if (_items[i])
-				delete(_items[i]);
-			_items[i] = src._items[i]->clone();
+			{
+				delete (_items[i]);
+				if (src._items[i])
+					_items[i] = src._items[i]->clone();
+			}
 		}
+
+		for (int i = 0; i < 1024; i++)
+		{
+			if (_dump[i])
+			{
+				delete (_dump[i]);
+				if (src._dump[i])
+					_dump[i] = src._dump[i]->clone();
+			}
+		}
+		
 	}
 	return (*this);
 }
@@ -49,27 +79,26 @@ std::string const &Character::getName() const
 
 void Character::equip(AMateria *m)
 {
-	if (!m)
-		return ;
-	for (int i = 0; i < 4; i++)
+	if (m)
 	{
-		if (!_items[i])
+		for (int i = 0; i < 4; i++)
 		{
-			_items[i] = m;
-			return ;
+			if (!_items[i])
+			{
+				_items[i] = m;
+				return ;
+			}
 		}
+		delete m;
 	}
-	std::cout << "Action not allowed!" << std::endl;
 }
 
 void Character::unequip(int idx)
 {
-	if (idx >= 0 && idx < 4)
+	if (idx >= 0 && idx < 4 && _items[idx])
 	{
-		if (!_items[idx])
-			return ;
-		if (_items[idx])
-			_items[idx] = NULL;
+		_dump[idx] = _items[idx];
+		_items[idx] = NULL;
 	}
 }
 

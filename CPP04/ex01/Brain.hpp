@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:34:44 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/13 12:11:45 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/21 17:30:28 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ class Brain
 		Brain(Brain const& src);
 		Brain& operator=(Brain const& src);
 		~Brain(void);
+
+		void setIdeas(std::string ideas, int i);
+		std::string getIdeas(int i) const;
 };
 
 #endif

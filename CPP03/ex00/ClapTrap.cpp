@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 21:27:26 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/12 18:02:55 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/13 11:56:15 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap() : _name("Frog"), _hit(10), _energy(10), _attackDamage(0)
 {
-	std::cout << "ClapTrap " << _name << " has been created!" << std::endl;
+	std::cout << "Default ClapTrap " << _name << " has been created!" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hit(10), _energy(10), _attackDamage(0)
@@ -25,7 +25,7 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hit(10), _energy(10), _atta
 ClapTrap::ClapTrap(ClapTrap const &src)
 {
 	*this = src;
-	std::cout << "ClapTrap copy constructor called for " << _name << std::endl;
+	std::cout << "ClapTrap copy constructor is called for " << _name << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &src)
@@ -64,7 +64,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 		std::cout << "ClapTrap " << _name << " has taken " << amount << " points of damage, he has now " << _hit << " hitpoints!" << std::endl;
 	}
 	else
-		std::cout << _name << " is dead! can't take damage" << std::endl;
+		std::cout << "No hitpoints to take damage!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -76,5 +76,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "ClapTrap " << _name << " repairs " << amount << " points of hitpoints, he has now " << _hit << " hitpoints!" << std::endl;
 	}
 	else
-		std::cout << "No energy or hitpoints to repair!" << std::endl;
+		std::cout << "No energy or hitpoints to be repaired!" << std::endl;
 }

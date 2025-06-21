@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 13:16:19 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/20 20:11:26 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/21 17:19:41 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ Ice::~Ice() {}
 Ice* Ice::clone() const
 {
 	return (new Ice(*this)); // appel de la copie exacte de l'instance
-	// delete systematiquement si on utilise la fonction clone
 }
 
 void Ice::use(ICharacter& target)

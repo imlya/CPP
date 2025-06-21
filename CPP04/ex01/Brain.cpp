@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:34:48 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/13 12:12:16 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/21 17:56:06 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,14 @@ Brain &Brain::operator=(Brain const &src)
 Brain::~Brain()
 {
 	std::cout << "Brain has been destroyed!" << std::endl;
+}
+
+std::string Brain::getIdeas(int i) const
+{
+	return (_ideas[i]);
+}
+
+void Brain::setIdeas(std::string ideas, int i)
+{
+	_ideas[i] = ideas;
 }

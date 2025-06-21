@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 16:09:11 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/12 18:05:04 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/13 11:56:15 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 
 FragTrap::FragTrap(FragTrap const &src) : ClapTrap(src)
 {
-	std::cout << "FragTrap copy constructor called for " << _name << std::endl;
+	std::cout << "FragTrap copy constructor is called for " << _name << std::endl;
 }
 
 FragTrap &FragTrap::operator=(FragTrap const &src)

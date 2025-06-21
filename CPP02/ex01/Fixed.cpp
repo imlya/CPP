@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 23:00:02 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/12 16:29:37 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/13 11:38:30 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Fixed::Fixed() : _rawBits(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Fixed has been created" << std::endl;
 }
 
 Fixed::Fixed(int const i) : _rawBits(i * (1 << this->_fractBits))
@@ -29,11 +29,12 @@ Fixed::Fixed(float const f) : _rawBits(roundf(f * (1 << this->_fractBits)))
 
 Fixed::Fixed (Fixed const & src) : _rawBits(src.getRawBits())
 {
-	std::cout << "src constructor called" << std::endl;
+	std::cout << "Fixed copy constructor called" << std::endl;
 	// *this = src;
 }
 
-Fixed & Fixed::operator=(Fixed const & src){
+Fixed & Fixed::operator=(Fixed const & src)
+{
 	std::cout << "src assignment operator called" << std::endl;
 	if (this != &src)
 		this->_rawBits = src.getRawBits();
@@ -42,7 +43,7 @@ Fixed & Fixed::operator=(Fixed const & src){
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called " << std::endl;
+	std::cout << "Fixed has been destroyed" << std::endl;
 }
 
 int Fixed::getRawBits(void) const

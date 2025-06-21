@@ -6,15 +6,15 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 23:00:02 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/12 16:09:06 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/13 11:22:23 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : _rawBits(0)
-{
-}
+Fixed::Fixed() : _rawBits(0) {}
+
+Fixed::~Fixed() {}
 
 Fixed::Fixed(int const i)
 {
@@ -135,10 +135,6 @@ Fixed& Fixed::max(Fixed &a, Fixed &b){
 
 const Fixed& Fixed::max(Fixed const &a, Fixed const &b){
 	return (a > b ? a : b);
-}
-
-Fixed::~Fixed()
-{
 }
 
 int Fixed::getRawBits(void) const

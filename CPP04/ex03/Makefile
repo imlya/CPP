@@ -2,7 +2,7 @@ NAME= interface
 SRC= main.cpp AMateria.cpp Cure.cpp Ice.cpp MateriaSource.cpp Character.cpp
 OBJS= $(SRC:.cpp=.o)
 CC= c++
-CFLAGS= -Wall -Wextra -Werror -std=c++98
+CFLAGS= -Wall -Wextra -Werror -std=c++98 -g3
 RM= rm -f
 
 RESET = \033[0m

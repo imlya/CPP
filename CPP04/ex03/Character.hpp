@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 16:02:18 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/20 23:53:20 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/21 17:19:23 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Character : virtual public ICharacter
 	private :
 		std::string _name;
 		AMateria* _items[4];
+		AMateria* _dump[1024];
 		
 	public:
 		Character();
@@ -35,6 +36,3 @@ class Character : virtual public ICharacter
 };
 
 #endif
-
-// Character peut equip() une AMateria, 
-// sans se soucier de ce que la materia fait réellement.

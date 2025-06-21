@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:05:51 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/12 16:11:33 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/21 17:34:58 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Cat : public Animal {
 		~Cat(void);
 
 		void makeSound(void) const;
+		std::string getBrain(int i) const;
+		void setBrain(std::string ideas, int i);
 };
 
 #endif

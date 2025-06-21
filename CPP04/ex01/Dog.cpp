@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:07:57 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/13 12:10:47 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/21 18:48:22 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,18 @@ Dog::~Dog()
 
 void Dog::makeSound() const{
 	std::cout << "The " << _type << " barks" << std::endl;
+}
+
+std::string Dog::getBrain(int i) const
+{
+	if (i < 0 || i > 99)
+		return ("null");
+	return (_brain->getIdeas(i));
+}
+
+void Dog::setBrain(std::string ideas, int i)
+{
+	if (i < 0 || i > 99)
+		return ;
+	_brain->getIdeas(i) = ideas[i];
 }

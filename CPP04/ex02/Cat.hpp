@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:05:51 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/13 15:31:10 by imatek           ###   ########.fr       */
+/*   Updated: 2025/06/21 18:49:51 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 #include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public AAnimal 
-{
+class Cat : public AAnimal {
 	private :
 		Brain* _brain;
 		
@@ -29,6 +28,8 @@ class Cat : public AAnimal
 		~Cat(void);
 
 		void makeSound(void) const;
+		std::string getBrain(int i) const;
+		void setBrain(std::string ideas, int i);
 };
 
 #endif
