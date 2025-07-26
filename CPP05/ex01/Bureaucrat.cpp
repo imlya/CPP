@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 20:47:09 by imatek            #+#    #+#             */
-/*   Updated: 2025/07/26 17:46:03 by imatek           ###   ########.fr       */
+/*   Updated: 2025/07/26 18:32:03 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,23 @@ std::ostream &operator<<(std::ostream &flux, Bureaucrat const &src)
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Grade is too high!\n");
+	return ("Bureaucrat grade is too high!\n");
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Grade is too low!\n");
+	return ("Bureaucrat grade is too low!\n");
+}
+
+void Bureaucrat::signForm(Form& src)
+{
+	try 
+	{
+		src.beSigned(*this);
+		std::cout << _name << " signed " << src.getName() << std::endl;
+	}
+	catch(std::exception& e)
+	{	
+		std::cerr << _name << " couldn’t sign " << src.getName() << " because " << e.what() << std::endl;
+	}
 }
