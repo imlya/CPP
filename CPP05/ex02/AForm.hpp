@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.hpp                                           :+:      :+:    :+:   */
+/*   AAForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -31,13 +31,14 @@ class AForm
 		AForm(std::string name, int signGrade, int executeGrade);
 		AForm (AForm const& src);
 		AForm& operator=(AForm const& src);
-		~AForm();
+		virtual ~AForm();
 		
 		std::string getName() const;
 		int getSigned() const;
 		int get_signGrade() const;
 		int get_executeGrade() const;
 		void beSigned(Bureaucrat const& sign);
+		virtual void execute(Bureaucrat const & executor) const = 0;
 		class GradeTooHighException : public std::exception {
 				virtual const char* what() const throw();
 			};
@@ -46,6 +47,6 @@ class AForm
 			};
 };
 
-std::ostream& operator<<(std::ostream& flux, AForm const& src);
+std::ostream& operator<<(std::ostream& flux, AForm const& form);
 
 #endif

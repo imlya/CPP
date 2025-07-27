@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.cpp                                           :+:      :+:    :+:   */
+/*   AAForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -56,10 +56,10 @@ const char* AForm::GradeTooLowException::what() const throw()
 	return ("Grade is too low to sign!\n");
 } 
 
-std::ostream& operator<<(std::ostream& flux, AForm const& src)
+std::ostream& operator<<(std::ostream& flux, AForm const& form)
 {
-	flux << "AForm " << src.getName() << ", Grade to sign " << src.get_signGrade()
-		<< ", Grade to execute " <<  src.get_executeGrade()
-		<< ", is signed ? " << (src.getSigned() ? "Yes" : "No") << std::endl;
+	flux << "AForm " << form.getName() << ", Grade to sign " << form.get_signGrade()
+		<< ", Grade to execute " <<  form.get_executeGrade()
+		<< ", is signed ? " << (form.getSigned() ? "Yes" : "No") << std::endl;
 	return (flux);
 }

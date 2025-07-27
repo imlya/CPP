@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.hpp                                           :+:      :+:    :+:   */
+/*   AAForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,42 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AForm_HPP
-#define AForm_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
 #include <iostream>
 #include <exception>
+#include <fstream>
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 class Bureaucrat;
-class AForm
+class PresidentialPardonForm : public AForm
 {
 	private :
-		std::string const _name;
-		bool _signed;
-		int const _signGrade;
-		int const _executeGrade;
-		AForm();
+		std::string _target;
 		
 	public :
-		AForm(std::string name, int signGrade, int executeGrade);
-		AForm (AForm const& src);
-		AForm& operator=(AForm const& src);
-		~AForm();
-		
-		std::string getName() const;
-		int getSigned() const;
-		int get_signGrade() const;
-		int get_executeGrade() const;
-		void beSigned(Bureaucrat const& sign);
-		class GradeTooHighException : public std::exception {
-				virtual const char* what() const throw();
-			};
-		class GradeTooLowException : public std::exception {
-				virtual const char* what() const throw(); 
-			};
-};
+		PresidentialPardonForm(std::string target);
+		virtual ~PresidentialPardonForm();
+		void execute(Bureaucrat const & executor) const;
 
-std::ostream& operator<<(std::ostream& flux, AForm const& src);
+};
+std::ostream& operator<<(std::ostream& flux, AForm const& form);
 
 #endif

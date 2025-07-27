@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 20:46:34 by imatek            #+#    #+#             */
-/*   Updated: 2025/07/26 18:29:56 by imatek           ###   ########.fr       */
+/*   Updated: 2025/07/27 15:52:24 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -32,7 +32,7 @@ class Bureaucrat
 		Bureaucrat& operator=(Bureaucrat const& src);
 		~Bureaucrat();
 		
-		void signForm(Form& src);
+		void signAForm(AForm& src);
 		std::string getName() const;
 		int getGrade() const;
 		Bureaucrat operator++(int);

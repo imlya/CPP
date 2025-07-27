@@ -1,5 +1,5 @@
-NAME= maggots
-SRC= main.cpp Bureaucrat.cpp AForm.cpp
+NAME= 28B
+SRC= main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp
 OBJS= $(SRC:.cpp=.o)
 CC= c++
 CFLAGS= -Wall -Wextra -Werror -std=c++98 -g3
@@ -13,7 +13,7 @@ CYAN = \033[36m
 RED = \033[31m
 MAGENTA = \033[35m
 
-TITLE= "\n$(MAGENTA)====================================$(RESET)\n$(CYAN)   CPP05/EX01  :  AForm UP, MAGGOTS!  $(RESET)\n$(MAGENTA)====================================$(RESET)\n"
+TITLE= "\n$(MAGENTA)==============================================$(RESET)\n$(CYAN)CPP05/EX02  :  No, you need AForm 28B, not 28C  $(RESET)\n$(MAGENTA)==============================================$(RESET)\n"
 
 all: title $(NAME)
 

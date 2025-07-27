@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 20:46:18 by imatek            #+#    #+#             */
-/*   Updated: 2025/07/27 15:52:24 by imatek           ###   ########.fr       */
+/*   Updated: 2025/07/27 16:40:37 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,11 @@ int main()
         try
         {
             Bureaucrat Bob("Bob", 45);
-            AForm AForm1("AForm1", 50, 30);
-
             std::cout << Bob << std::endl;
-            std::cout << AForm1 << std::endl;
-            Bob.signAForm(AForm1);
+            
+            // AForm AForm1("AForm1", 50, 30);
+            // std::cout << AForm1 << std::endl;
+            // Bob.signAForm(AForm1);
         }
         catch(const std::exception& e)
         {
@@ -75,11 +75,11 @@ int main()
         }
         try
         {
+            // AForm AForm2("AForm2", 50, 50);
+            // Anni.signAForm(AForm2);
+            // std::cout << AForm2 << std::endl;
+            
             Bureaucrat Anni("Anni", 2);
-            AForm AForm2("AForm2", 50, 50);
-
-            Anni.signAForm(AForm2);
-            std::cout << AForm2 << std::endl;
 
             std::cout << "Before operator++ : " << Anni << std::endl;
             Anni++;
@@ -93,12 +93,12 @@ int main()
         }
         try
         {
+            // AForm AForm3("AForm3", 50, 50);
+            // std::cout << AForm3 << std::endl;
+            // Pino.signAForm(AForm3);
+            
             Bureaucrat Pino("Pino", 70);
-            AForm AForm3("AForm3", 50, 50);
-
             std::cout << Pino << std::endl;
-            std::cout << AForm3 << std::endl;
-            Pino.signAForm(AForm3);
 
         }
         catch(const std::exception& e)
