@@ -1,5 +1,5 @@
 NAME= 28B
-SRC= main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp
+SRC= main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 OBJS= $(SRC:.cpp=.o)
 CC= c++
 CFLAGS= -Wall -Wextra -Werror -std=c++98 -g3

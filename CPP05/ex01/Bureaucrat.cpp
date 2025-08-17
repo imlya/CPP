@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 20:47:09 by imatek            #+#    #+#             */
-/*   Updated: 2025/07/27 15:52:24 by imatek           ###   ########.fr       */
+/*   Updated: 2025/08/17 14:53:30 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 		_grade = grade;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src): _name(src._name)
-{
-	*this = src;
-}
+Bureaucrat::Bureaucrat(Bureaucrat const &src): _name(src._name), _grade(src._grade) {}
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &src)
 {
@@ -37,7 +34,7 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &src)
 	return (*this);
 }
 
-std::string Bureaucrat::getName() const { return (_name); }
+std::string const& Bureaucrat::getName() const { return (_name); }
 
 int Bureaucrat::getGrade() const { return (_grade); }
 
@@ -75,7 +72,7 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 	return ("Bureaucrat grade is too low!\n");
 }
 
-void Bureaucrat::signAForm(AForm& src)
+void Bureaucrat::signForm(Form& src)
 {
 	try 
 	{

@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 20:47:09 by imatek            #+#    #+#             */
-/*   Updated: 2025/07/26 17:46:03 by imatek           ###   ########.fr       */
+/*   Updated: 2025/08/17 14:45:05 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,9 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 		_grade = grade;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src): _name(src._name)
-{
-	*this = src;
-}
+Bureaucrat::Bureaucrat(Bureaucrat const &src): _name(src._name), _grade(src._grade) {}
 
-Bureaucrat &Bureaucrat::operator=(Bureaucrat const &src)
-{
-	if (this != &src)
-		_grade = src._grade;
-	return (*this);
-}
-
-std::string Bureaucrat::getName() const { return (_name); }
+std::string const& Bureaucrat::getName() const { return (_name); }
 
 int Bureaucrat::getGrade() const { return (_grade); }
 

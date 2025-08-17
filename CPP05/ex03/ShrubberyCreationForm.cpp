@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 16:16:47 by imatek            #+#    #+#             */
-/*   Updated: 2025/08/17 20:22:42 by imatek           ###   ########.fr       */
+/*   Updated: 2025/08/17 20:24:01 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	if (getSigned() != true && executor.getGrade() > get_executeGrade())
 		throw std::runtime_error("can't be executed.");
-		
 	std::string newFile = _target + "_shrubbery";
 	std::ofstream outputfile(newFile.c_str());
 	if (!outputfile.is_open())
@@ -28,7 +27,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		std::cerr << "error : Open file failed." << std::endl;
 		exit(EXIT_FAILURE);
 	}
-	
 	outputfile << ASCII_TREES;
 	std::cout << "Trees has been planted in " << _target << std::endl;
 }

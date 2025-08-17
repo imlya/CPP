@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.hpp                                           :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 12:19:25 by imatek            #+#    #+#             */
-/*   Updated: 2025/07/27 15:52:12 by imatek           ###   ########.fr       */
+/*   Updated: 2025/08/17 14:51:14 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AForm_HPP
-#define AForm_HPP
+#ifndef Form_HPP
+#define Form_HPP
 
 #include <iostream>
 #include <exception>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
-class AForm
+class Form
 {
 	private :
 		std::string const _name;
 		bool _signed;
 		int const _signGrade;
 		int const _executeGrade;
-		AForm();
+		Form();
 		
 	public :
-		AForm(std::string name, int signGrade, int executeGrade);
-		AForm (AForm const& src);
-		AForm& operator=(AForm const& src);
-		~AForm();
+		Form(std::string name, int signGrade, int executeGrade);
+		Form (Form const& src);
+		Form& operator=(Form const& src);
+		~Form();
 		
 		std::string getName() const;
 		int getSigned() const;
@@ -46,6 +46,6 @@ class AForm
 			};
 };
 
-std::ostream& operator<<(std::ostream& flux, AForm const& src);
+std::ostream& operator<<(std::ostream& flux, Form const& src);
 
 #endif

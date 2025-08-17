@@ -6,11 +6,12 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 20:46:18 by imatek            #+#    #+#             */
-/*   Updated: 2025/07/27 16:40:37 by imatek           ###   ########.fr       */
+/*   Updated: 2025/08/17 16:36:05 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 int main()
 {
@@ -22,9 +23,9 @@ int main()
         Bureaucrat    *copyBureaucrat = new Bureaucrat(*paramBureaucrat);
         Bureaucrat	*higherBureaucrat = new Bureaucrat("Patrick", 148);
         
-        std::cout << *higherBureaucrat << std::endl;
         std::cout << *paramBureaucrat << std::endl;
         std::cout << *copyBureaucrat << std::endl;
+        std::cout << *higherBureaucrat << std::endl;
 
         std::cout << "===========TEST INCREMENT/DECREMENT GRADE & EXCEPTION=========== " << std::endl;
         try
@@ -35,20 +36,6 @@ int main()
             std::cout << *higherBureaucrat << std::endl;
             (*higherBureaucrat)++; // <--- exception catched
             std::cout << *higherBureaucrat << std::endl; 
-        
-            std::cout << "===========TEST DEEP COPY=========== " << std::endl;
-            
-            *higherBureaucrat = *paramBureaucrat; // <----- deep copy
-
-            std::cout << *higherBureaucrat << std::endl;
-            std::cout << *paramBureaucrat << std::endl;
-
-            (*higherBureaucrat)--;
-            std::cout << *higherBureaucrat << std::endl;
-            (*higherBureaucrat)--;
-            std::cout << *higherBureaucrat << std::endl;
-
-            std::cout << *paramBureaucrat << std::endl;
         }
         catch (std::exception & e)
         {

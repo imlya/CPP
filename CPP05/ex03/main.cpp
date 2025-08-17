@@ -6,12 +6,16 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 20:46:18 by imatek            #+#    #+#             */
-/*   Updated: 2025/08/17 14:53:18 by imatek           ###   ########.fr       */
+/*   Updated: 2025/08/17 20:52:23 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "Intern.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
@@ -23,9 +27,9 @@ int main()
         Bureaucrat    *copyBureaucrat = new Bureaucrat(*paramBureaucrat);
         Bureaucrat	*higherBureaucrat = new Bureaucrat("Patrick", 148);
         
-        std::cout << *higherBureaucrat << std::endl;
         std::cout << *paramBureaucrat << std::endl;
         std::cout << *copyBureaucrat << std::endl;
+        std::cout << *higherBureaucrat << std::endl;
 
         std::cout << "===========TEST INCREMENT/DECREMENT GRADE & EXCEPTION=========== " << std::endl;
         try
@@ -50,11 +54,11 @@ int main()
         try
         {
             Bureaucrat Bob("Bob", 45);
-            Form Form1("Form1", 50, 30);
-
             std::cout << Bob << std::endl;
-            std::cout << Form1 << std::endl;
-            Bob.signForm(Form1);
+            
+            // AForm AForm1("AForm1", 50, 30);
+            // std::cout << AForm1 << std::endl;
+            // Bob.signAForm(AForm1);
         }
         catch(const std::exception& e)
         {
@@ -62,11 +66,11 @@ int main()
         }
         try
         {
+            // AForm AForm2("AForm2", 50, 50);
+            // Anni.signAForm(AForm2);
+            // std::cout << AForm2 << std::endl;
+            
             Bureaucrat Anni("Anni", 2);
-            Form Form2("Form2", 50, 50);
-
-            Anni.signForm(Form2);
-            std::cout << Form2 << std::endl;
 
             std::cout << "Before operator++ : " << Anni << std::endl;
             Anni++;
@@ -80,13 +84,9 @@ int main()
         }
         try
         {
-            Bureaucrat Pino("Pino", 70);
-            Form Form3("Form3", 50, 50);
-
-            std::cout << Pino << std::endl;
-            std::cout << Form3 << std::endl;
-            Pino.signForm(Form3);
-
+            Intern someRandomIntern;
+            AForm* rrf;
+            rrf = someRandomIntern.makeForm("robotomy request", "Bender");
         }
         catch(const std::exception& e)
         {

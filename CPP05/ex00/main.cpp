@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 20:46:18 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/30 12:15:19 by imatek           ###   ########.fr       */
+/*   Updated: 2025/08/17 14:49:28 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,6 @@ int main()
         std::cout << *higherBureaucrat << std::endl;
         (*higherBureaucrat)++; // <--- exception catched
         std::cout << *higherBureaucrat << std::endl; 
-    
-        std::cout << "===========TEST DEEP COPY=========== " << std::endl;
-        
-        *higherBureaucrat = *paramBureaucrat; // <----- deep copy
-
-        std::cout << *higherBureaucrat << std::endl;
-        std::cout << *paramBureaucrat << std::endl;
-
-        (*higherBureaucrat)--;
-        std::cout << *higherBureaucrat << std::endl;
-        (*higherBureaucrat)--;
-        std::cout << *higherBureaucrat << std::endl;
-
-        std::cout << *paramBureaucrat << std::endl;
     }
     catch (std::exception & e)
     {
