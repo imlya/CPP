@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 17:55:21 by imatek            #+#    #+#             */
-/*   Updated: 2025/05/26 23:51:49 by imatek           ###   ########.fr       */
+/*   Updated: 2025/07/27 17:04:01 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int main(int ac, char **av)
 	if (ac == 4)
 	{
 		std::string filename = av[1];
+		std::string s_read = filename.append(".replace");
 		std::string s1 = av[2];
 		std::string s2 = av[3];
 		std::string string;
-		std::string s_read = filename.append(".replace");
 		int	pos = 0;
 
 		std::ifstream ifs(av[1]); // lecture du fichier input

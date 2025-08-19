@@ -6,7 +6,7 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 20:47:09 by imatek            #+#    #+#             */
-/*   Updated: 2025/08/17 14:45:05 by imatek           ###   ########.fr       */
+/*   Updated: 2025/08/19 19:31:12 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ Bureaucrat::~Bureaucrat(){}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
+	//! si grade < 1 || grade > 150
+		//! return ?? si throw ca cree un core dump hors du scope try{}
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else if (grade > 150)
