@@ -1,0 +1,40 @@
+-  class not instanciable
+-  check if isDisplayable
+	! throw "Non displayable";
+-  if overflow or ... 
+	! throw "impossible"
+-	handle numeric limits and special values
+-	type conversion must be handled using a specific type of casting
+1 - parse of param "wich literal type"
+2 - convert from string to actual type
+3 - convert this type to the 3 others
+4 - display :
+
+./convert 0
+		char: Non displayable
+		int: 0
+		float: 0.0f
+		double: 0.0
+
+./convert nan
+		char: impossible
+		int: impossible
+		float: nanf
+		double: nan
+
+./convert 42.0f
+		char: '*'
+		int: 42
+		float: 42.0f
+		double: 42
+
+return :
+		Examples of char literals: ’c’, ’a’, ...
+		• char ==> decimal
+		Examples of int literals: 0, -42, 42...
+		• string -> int = atoi 
+		Examples of float literals: 0.0f, -4.2f, 4.2f...
+		+++ -inff, +inff, nanf
+		• string -> float / double = std::stod
+		Examples of double literals: 0.0, -4.2, 4.2...
+		+++ -inf, +inf, nan
