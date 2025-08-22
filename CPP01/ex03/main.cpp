@@ -6,13 +6,13 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 18:02:38 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/12 15:03:12 by imatek           ###   ########.fr       */
+/*   Updated: 2025/08/22 17:26:12 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "include/Weapon.hpp"
+#include "include/HumanA.hpp"
+#include "include/HumanB.hpp"
 
 int main()
 {

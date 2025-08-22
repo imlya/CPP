@@ -6,13 +6,13 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:02:01 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/21 17:18:20 by imatek           ###   ########.fr       */
+/*   Updated: 2025/08/22 17:06:37 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongCat.hpp"
+#include "include/Dog.hpp"
+#include "include/Cat.hpp"
+#include "include/WrongCat.hpp"
 
 int main()
 {

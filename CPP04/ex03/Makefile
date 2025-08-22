@@ -1,5 +1,5 @@
 NAME= interface
-SRC= main.cpp AMateria.cpp Cure.cpp Ice.cpp MateriaSource.cpp Character.cpp
+SRC= main.cpp src/AMateria.cpp src/Cure.cpp src/Ice.cpp src/MateriaSource.cpp src/Character.cpp
 OBJS= $(SRC:.cpp=.o)
 CC= c++
 CFLAGS= -Wall -Wextra -Werror -std=c++98 -g3

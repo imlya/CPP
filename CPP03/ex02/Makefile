@@ -1,5 +1,5 @@
 NAME= repetitiveWork
-SRC= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC= main.cpp src/ClapTrap.cpp src/ScavTrap.cpp src/FragTrap.cpp
 OBJS= $(SRC:.cpp=.o)
 CC= c++
 CFLAGS= -Wall -Wextra -Werror -std=c++98

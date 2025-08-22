@@ -6,13 +6,13 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 14:40:42 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/12 18:06:16 by imatek           ###   ########.fr       */
+/*   Updated: 2025/08/22 17:06:22 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "include/ScavTrap.hpp"
+#include "include/FragTrap.hpp"
 
 int main()
 {

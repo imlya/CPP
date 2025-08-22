@@ -1,5 +1,5 @@
 NAME= brulerLeMonde
-SRC= main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+SRC= main.cpp src/Animal.cpp src/Dog.cpp src/Cat.cpp src/Brain.cpp
 OBJS= $(SRC:.cpp=.o)
 CC= c++
 CFLAGS= -Wall -Wextra -Werror -std=c++98 -g3

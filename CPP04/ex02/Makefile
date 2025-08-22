@@ -1,5 +1,5 @@
 NAME= classeAbstraite
-SRC= main.cpp AAnimal.cpp Dog.cpp Cat.cpp Brain.cpp
+SRC= main.cpp src/AAnimal.cpp src/Dog.cpp src/Cat.cpp src/Brain.cpp
 OBJS= $(SRC:.cpp=.o)
 CC= c++
 CFLAGS= -Wall -Wextra -Werror -std=c++98

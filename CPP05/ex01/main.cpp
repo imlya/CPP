@@ -6,92 +6,53 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 20:46:18 by imatek            #+#    #+#             */
-/*   Updated: 2025/08/17 14:53:18 by imatek           ###   ########.fr       */
+/*   Updated: 2025/08/22 17:27:48 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "include/Bureaucrat.hpp"
+#include "include/Form.hpp"
 
 int main()
 {
+    Bureaucrat *lily = new Bureaucrat ("lily", 5);
+    Bureaucrat *copy = new Bureaucrat (*lily);
+    Bureaucrat *Jhon = new Bureaucrat ("Jhon", 149);
+    Bureaucrat *Nina = new Bureaucrat ("Nina", 2);
+    Form Form1("Form1", 50, 30);
+    Form Form2("Form2", 50, 50);
+    Form Form3("Form3", 50, 50);
+    
+    std::cout << *lily << std::endl;
+    std::cout << *copy << std::endl;
+    std::cout << *Jhon << std::endl;
+    std::cout << *Nina;
+    std::cout << "=========================================" << std::endl;
+    try
     {
-        std::cout << "===========TEST OVERLOAD OSTREAM=========== " << std::endl;
+        (*lily)--;
+        std::cout << *lily << std::endl;
+        (*copy)++;
+        std::cout << *copy << std::endl;
+        (*Jhon)++;
+        std::cout << *Jhon << std::endl;
+        (*Nina)--;
+        std::cout << *Nina << std::endl;
         
-        // Bureaucrat    *defaultBureaucrat = new Bureaucrat();
-        Bureaucrat    *paramBureaucrat = new Bureaucrat("John", 3);
-        Bureaucrat    *copyBureaucrat = new Bureaucrat(*paramBureaucrat);
-        Bureaucrat	*higherBureaucrat = new Bureaucrat("Patrick", 148);
-        
-        std::cout << *higherBureaucrat << std::endl;
-        std::cout << *paramBureaucrat << std::endl;
-        std::cout << *copyBureaucrat << std::endl;
-
-        std::cout << "===========TEST INCREMENT/DECREMENT GRADE & EXCEPTION=========== " << std::endl;
-        try
-        {
-            (*paramBureaucrat)++;
-            std::cout << *paramBureaucrat << std::endl;
-            (*higherBureaucrat)++; // <--- exception catched
-            std::cout << *higherBureaucrat << std::endl;
-            (*higherBureaucrat)++; // <--- exception catched
-            std::cout << *higherBureaucrat << std::endl; 
-        }
-        catch (std::exception & e)
-        {
-            std::cerr << e.what() << std::endl;
-        }
-        delete(paramBureaucrat);
-        delete(copyBureaucrat);
-        delete(higherBureaucrat);
-        // delete defaultBureaucrat;
+        (*lily).signForm(Form1);
+        std::cout << Form1 << std::endl;
+        (*Jhon).signForm(Form2);
+        std::cout << Form2 << std::endl;
+        (*Nina).signForm(Form3);
+        std::cout << Form3 << std::endl;
     }
+    catch(const std::exception& e)
     {
-        try
-        {
-            Bureaucrat Bob("Bob", 45);
-            Form Form1("Form1", 50, 30);
-
-            std::cout << Bob << std::endl;
-            std::cout << Form1 << std::endl;
-            Bob.signForm(Form1);
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << std::endl;
-        }
-        try
-        {
-            Bureaucrat Anni("Anni", 2);
-            Form Form2("Form2", 50, 50);
-
-            Anni.signForm(Form2);
-            std::cout << Form2 << std::endl;
-
-            std::cout << "Before operator++ : " << Anni << std::endl;
-            Anni++;
-            Anni++;
-            Anni++;
-            std::cout << "After operator++ : " << Anni << std::endl;
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << std::endl;
-        }
-        try
-        {
-            Bureaucrat Pino("Pino", 70);
-            Form Form3("Form3", 50, 50);
-
-            std::cout << Pino << std::endl;
-            std::cout << Form3 << std::endl;
-            Pino.signForm(Form3);
-
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << std::endl;
-        }
+        std::cerr << e.what() << '\n';
     }
+
+    delete(lily);
+    delete(Jhon);
+    delete(Nina);
     return (0);
 }

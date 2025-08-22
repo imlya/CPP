@@ -6,17 +6,17 @@
 /*   By: imatek <imatek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 15:39:21 by imatek            #+#    #+#             */
-/*   Updated: 2025/06/21 17:03:49 by imatek           ###   ########.fr       */
+/*   Updated: 2025/08/22 17:09:55 by imatek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
-#include "Cure.hpp"
-#include "AMateria.hpp"
-#include "Character.hpp"
-#include "MateriaSource.hpp"
-#include "IMateriaSource.hpp"
-#include "ICharacter.hpp"
+#include "include/Ice.hpp"
+#include "include/Cure.hpp"
+#include "include/AMateria.hpp"
+#include "include/Character.hpp"
+#include "include/MateriaSource.hpp"
+#include "include/IMateriaSource.hpp"
+#include "include/ICharacter.hpp"
 
 int main()
 {

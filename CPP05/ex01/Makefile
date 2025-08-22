@@ -1,5 +1,5 @@
 NAME= maggots
-SRC= main.cpp Bureaucrat.cpp Form.cpp
+SRC= main.cpp src/Bureaucrat.cpp src/Form.cpp
 OBJS= $(SRC:.cpp=.o)
 CC= c++
 CFLAGS= -Wall -Wextra -Werror -std=c++98 -g3

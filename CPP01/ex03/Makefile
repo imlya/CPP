@@ -1,5 +1,5 @@
 NAME= UnnecessaryViolence
-SRC= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRC= main.cpp src/Weapon.cpp src/HumanA.cpp src/HumanB.cpp
 OBJS= $(SRC:.cpp=.o)
 CC= c++
 CFLAGS= -Wall -Wextra -Werror -std=c++98
