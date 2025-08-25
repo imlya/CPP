@@ -1,5 +1,5 @@
 NAME= convert
-SRC= main.cpp src/ScalarConverter.cpp
+SRC= main.cpp src/ScalarConverter.cpp src/Utils.cpp
 OBJS= $(SRC:.cpp=.o)
 CC= c++
 CFLAGS= -Wall -Wextra -Werror -std=c++98 -g3

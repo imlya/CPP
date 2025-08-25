@@ -1,8 +1,6 @@
--  class not instanciable
--  check if isDisplayable
-	! throw "Non displayable";
--  if overflow or ... 
-	! throw "impossible"
+-	2 exception classes :
+		-  not Displayable ==> throw "Non displayable";
+		-  overflow ==> throw "impossible"
 -	handle numeric limits and special values
 -	type conversion must be handled using a specific type of casting
 1 - parse of param "wich literal type"

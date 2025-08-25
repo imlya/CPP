@@ -15,11 +15,10 @@ class ScalarConverter
 
 	public :
 		static void convert(std::string const&);
-
-		class ConversionImpossible : public std::exception {
-			virtual const char* what() const throw();
-		};
-		class NonDisplayable : public std::exception {
-			virtual const char* what() const throw();
-		};
+		// class ConversionImpossible : public std::exception {
+		// 	virtual const char* what() const throw();
+		// };
+		// class NonDisplayable : public std::exception {
+		// 	virtual const char* what() const throw();
+		// };
 };

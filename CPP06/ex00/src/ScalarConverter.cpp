@@ -1,4 +1,5 @@
 #include "../include/ScalarConverter.hpp"
+#include "../include/Utils.hpp"
 
 void ScalarConverter::convert(std::string const&)
 {
@@ -22,7 +23,7 @@ void ScalarConverter::convert(std::string const&)
 	}
 }
 
-const char* ScalarConverter::NonDisplayable::what() const throw()
-{
-	return ("Non displayable\n");
-}
+// const char* ScalarConverter::NonDisplayable::what() const throw()
+// {
+// 	return ("Non displayable\n");
+// }

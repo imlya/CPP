@@ -1,11 +1,5 @@
 #include "include/ScalarConverter.hpp"
-
-bool isDisplayable (std::string s)
-{
-	for (int i = 0; s[i] >= 32; i++)
-		return (true);
-	return (false);
-}
+#include "include/Utils.hpp"
 
 int main(int ac, char **av)
 {
@@ -13,15 +7,7 @@ int main(int ac, char **av)
 	{
 		try
 		{
-			if (isDisplayable(av[1]) == true)
-			try
-			{
-				ScalarConverter::convert(av[1]);
-			}
-			catch(const std::exception& e)
-			{
-				std::cerr << e.what() << '\n';
-			}
+			ScalarConverter::convert(av[1]);
 		}
 		catch(const std::exception& e)
 		{
